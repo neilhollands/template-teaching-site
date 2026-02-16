@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- HEAD: page metadata (not visible in the page) -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teaching Template Site (Labeled HTML Parts)</title>
+
+  <!-- LINK: connect CSS file -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <!-- SKIP LINK: helps keyboard users jump to main content -->
+  <a class="skip-link" href="#main-content">Skip to MAIN content</a>
+
+  <!-- HEADER: top-of-page area (usually logo + navigation) -->
+  <header class="site-header" data-part="HEADER">
+    <div class="container header-inner">
+      <!-- BRANDING: logo / site title area -->
+      <div class="brand" data-part="BRAND">
+        <span class="brand-mark" aria-hidden="true">◼</span>
+        <div>
+          <div class="brand-title">SITE TITLE (Branding)</div>
+          <div class="brand-subtitle">A labeled template for learning HTML structure</div>
+        </div>
+      </div>
+
+      <!-- NAV: primary navigation -->
+      <nav class="site-nav" aria-label="Primary navigation" data-part="NAV">
+        <button class="btn btn-ghost" type="button" id="menuButton" aria-expanded="false">
+          BUTTON: Mobile Menu Toggle
+        </button>
+
+        <ul class="nav-list" id="navList">
+          <li><a href="index.html" class="nav-link" aria-current="page">LINK: Home</a></li>
+          <li><a href="about.html" class="nav-link">LINK: About (Second Page)</a></li>
+          <li><a href="#section-components" class="nav-link">LINK: Components</a></li>
+          <li><a href="#section-form" class="nav-link">LINK: Form</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- TOOLBAR: small controls area -->
+    <div class="container toolbar" data-part="TOOLBAR">
+      <label class="toggle">
+        <input id="labelToggle" type="checkbox" checked />
+        <span>Toggle: Show/Hide Teaching Labels</span>
+      </label>
+
+      <button class="btn btn-secondary" type="button" id="themeButton">
+        BUTTON: Theme Toggle (Light/Dark)
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN: the primary content of the page -->
+  <main id="main-content" class="site-main" data-part="MAIN">
+    <div class="container">
+      <!-- HERO SECTION: big intro area -->
+      <section class="hero" data-part="SECTION (Hero)">
+        <div class="teaching-label">SECTION: Hero</div>
+
+        <h1>Heading (H1): Page Title</h1>
+        <p>
+          Paragraph (P): This page is designed to show the <strong>common HTML parts</strong>
+          and how they fit together. Everything is labeled with generic names.
+        </p>
+
+        <!-- BUTTON GROUP: common UI pattern -->
+        <div class="button-row" data-part="BUTTON GROUP">
+          <button class="btn btn-primary" type="button" id="primaryAction">
+            BUTTON: Primary Action
+          </button>
+          <button class="btn btn-outline" type="button" id="secondaryAction">
+            BUTTON: Secondary Action
+          </button>
+          <a class="btn btn-link" href="#section-layout">
+            LINK styled as Button: Jump to Layout
+          </a>
+        </div>
+      </section>
+
+      <!-- LAYOUT SECTION: shows typical content structure -->
+      <section id="section-layout" class="layout-grid" data-part="SECTION (Layout Example)">
+        <div class="teaching-label">SECTION: Layout Example</div>
+
+        <!-- ARTICLE: a self-contained piece of content -->
+        <article class="card" data-part="ARTICLE (Card)">
+          <div class="teaching-label">ARTICLE: Card</div>
+          <h2>Heading (H2): Article/Card Example</h2>
+          <p>
+            Paragraph: An <code>&lt;article&gt;</code> is for content that can stand on its own
+            (like a post, a news item, or a product card).
+          </p>
+
+          <!-- LIST: common content pattern -->
+          <h3>Heading (H3): Unordered List (UL)</h3>
+          <ul>
+            <li>List item (LI): One</li>
+            <li>List item (LI): Two</li>
+            <li>List item (LI): Three</li>
+          </ul>
+
+          <details class="details" data-part="DETAILS (Accordion)">
+            <summary>DETAILS/SUMMARY: Click to expand</summary>
+            <p>
+              This is a built-in “accordion” style component: <code>&lt;details&gt;</code>.
+              It’s great for FAQs and extra info.
+            </p>
+          </details>
+        </article>
+
+        <!-- ASIDE: content related to main content (sidebar) -->
+        <aside class="card" data-part="ASIDE (Sidebar)">
+          <div class="teaching-label">ASIDE: Sidebar</div>
+          <h2>Heading (H2): Sidebar Example</h2>
+          <p>
+            Paragraph: An <code>&lt;aside&gt;</code> is for related information
+            (like tips, links, or definitions).
+          </p>
+
+          <div class="note" data-part="CALLOUT (Note)">
+            <div class="teaching-label">CALLOUT: Note</div>
+            <strong>Tip:</strong> Try using your browser’s “Inspect” tool to see the HTML elements.
+          </div>
+
+          <button class="btn btn-ghost" type="button" id="scrollTopButton">
+            BUTTON: Scroll to Top
+          </button>
+        </aside>
+      </section>
+
+      <!-- COMPONENTS SECTION: common UI components -->
+      <section id="section-components" class="section" data-part="SECTION (Components)">
+        <div class="teaching-label">SECTION: Components</div>
+
+        <h2>Heading (H2): Common Components</h2>
+        <p>
+          These are typical “building blocks” you’ll find in many websites.
+        </p>
+
+        <!-- CARD GRID: multiple cards -->
+        <div class="grid-3" data-part="GRID (Cards)">
+          <div class="card" data-part="COMPONENT: Card">
+            <div class="teaching-label">COMPONENT: Card</div>
+            <h3>Card Title (H3)</h3>
+            <p>Card text (P): A reusable container for content.</p>
+            <button class="btn btn-primary" type="button">BUTTON: Card Action</button>
+          </div>
+
+          <div class="card" data-part="COMPONENT: Media Block">
+            <div class="teaching-label">COMPONENT: Media Block</div>
+            <div class="fake-media" aria-hidden="true">IMAGE PLACEHOLDER</div>
+            <p>
+              This simulates an image + text component. Replace the placeholder with an
+              <code>&lt;img&gt;</code> tag later.
+            </p>
+            <a href="about.html" class="btn btn-outline">LINK: Learn More</a>
+          </div>
+
+          <div class="card" data-part="COMPONENT: Table">
+            <div class="teaching-label">COMPONENT: Table</div>
+            <h3>Small Table</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>TH: Column A</th>
+                  <th>TH: Column B</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>TD: Row 1</td>
+                  <td>TD: Data</td>
+                </tr>
+                <tr>
+                  <td>TD: Row 2</td>
+                  <td>TD: Data</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORM SECTION: common form elements -->
+      <section id="section-form" class="section" data-part="SECTION (Form)">
+        <div class="teaching-label">SECTION: Form</div>
+
+        <h2>Heading (H2): Form Example</h2>
+        <p>
+          A <code>&lt;form&gt;</code> collects user input. This demo prevents real submission
+          so students can test safely.
+        </p>
+
+        <form class="card form" id="demoForm" data-part="FORM">
+          <div class="teaching-label">FORM: Demo Form</div>
+
+          <!-- FIELDSET: groups related controls -->
+          <fieldset data-part="FIELDSET">
+            <legend>LEGEND: Group of Inputs</legend>
+
+            <label>
+              LABEL: Text Input
+              <input name="textInput" type="text" placeholder="INPUT: type here..." />
+            </label>
+
+            <label>
+              LABEL: Email Input
+              <input name="emailInput" type="email" placeholder="INPUT: name@example.com" />
+            </label>
+
+            <label>
+              LABEL: Select Dropdown
+              <select name="selectInput">
+                <option value="">OPTION: Choose one</option>
+                <option>OPTION: Item 1</option>
+                <option>OPTION: Item 2</option>
+              </select>
+            </label>
+
+            <label>
+              LABEL: Textarea
+              <textarea name="messageInput" rows="4" placeholder="TEXTAREA: longer text..."></textarea>
+            </label>
+
+            <!-- RADIO GROUP -->
+            <div class="field-row" data-part="RADIO GROUP">
+              <div class="field-title">RADIO GROUP: Choose one</div>
+              <label><input type="radio" name="radioGroup" value="one" /> RADIO: Option One</label>
+              <label><input type="radio" name="radioGroup" value="two" /> RADIO: Option Two</label>
+            </div>
+
+            <!-- CHECKBOX -->
+            <label class="field-row" data-part="CHECKBOX">
+              <input type="checkbox" name="agree" />
+              CHECKBOX: I understand this is a demo form
+            </label>
+          </fieldset>
+
+          <!-- FORM BUTTONS -->
+          <div class="button-row" data-part="FORM BUTTONS">
+            <button class="btn btn-primary" type="submit">BUTTON: Submit (Demo)</button>
+            <button class="btn btn-secondary" type="reset">BUTTON: Reset</button>
+            <button class="btn btn-outline" type="button" id="openModalButton">
+              BUTTON: Open Modal (Dialog)
+            </button>
+          </div>
+
+          <p class="form-status" id="formStatus" role="status" aria-live="polite">
+            STATUS AREA: form messages will appear here
+          </p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER: bottom-of-page area -->
+  <footer class="site-footer" data-part="FOOTER">
+    <div class="container footer-inner">
+      <div class="teaching-label">FOOTER</div>
+
+      <p>
+        Paragraph: Footer content goes here — copyright, links, contact info, etc.
+      </p>
+
+      <ul class="footer-links" data-part="FOOTER LINKS">
+        <li><a href="#main-content">LINK: Back to top</a></li>
+        <li><a href="about.html">LINK: About</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- DIALOG / MODAL: a popup box -->
+  <dialog class="modal" id="demoModal" aria-label="Demo modal dialog" data-part="DIALOG (Modal)">
+    <div class="teaching-label">DIALOG: Modal</div>
+    <h2>Heading (H2): Modal Title</h2>
+    <p>Paragraph: This is a <code>&lt;dialog&gt;</code> element.</p>
+    <div class="button-row">
+      <button class="btn btn-primary" id="closeModalButton" type="button">BUTTON: Close Modal</button>
+    </div>
+  </dialog>
+
+  <!-- SCRIPT: connect JavaScript file -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
