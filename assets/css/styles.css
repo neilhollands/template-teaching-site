@@ -107,6 +107,26 @@ html, body {
   border-color: var(--accent);
 }
 
+/* --- NAV FIXES: keep nav items readable on desktop --- */
+
+/* Hide the mobile menu button on desktop (we only need it on small screens) */
+#menuButton {
+  display: none;
+}
+
+/* Don't let "LINK: Home" split onto two lines */
+.nav-link {
+  white-space: nowrap;
+}
+
+/* If space gets tight, wrap items to a new row (as whole items, not broken text) */
+.nav-list {
+  flex-wrap: wrap;
+  row-gap: 6px;
+  justify-content: flex-end;
+}
+
+
 .toolbar {
   display: flex;
   align-items: center;
@@ -356,4 +376,15 @@ legend {
   /* Mobile nav collapses */
   .nav-list { display: none; flex-direction: column; align-items: flex-start; }
   .nav-list.is-open { display: flex; }
+
+   /* Show the mobile menu button on small screens */
+#menuButton {
+  display: inline-flex;
+}
+
+/* When open on mobile, make the menu feel like a dropdown */
+.nav-list.is-open {
+  width: 100%;
+}
+
 }
