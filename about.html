@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Teaching Template Site</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to MAIN content</a>
+
+  <header class="site-header" data-part="HEADER">
+    <div class="container header-inner">
+      <div class="brand" data-part="BRAND">
+        <span class="brand-mark" aria-hidden="true">◼</span>
+        <div>
+          <div class="brand-title">SITE TITLE (Branding)</div>
+          <div class="brand-subtitle">Second page to teach multi-page navigation</div>
+        </div>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary navigation" data-part="NAV">
+        <button class="btn btn-ghost" type="button" id="menuButton" aria-expanded="false">
+          BUTTON: Mobile Menu Toggle
+        </button>
+
+        <ul class="nav-list" id="navList">
+          <li><a href="index.html" class="nav-link">LINK: Home</a></li>
+          <li><a href="about.html" class="nav-link" aria-current="page">LINK: About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container toolbar" data-part="TOOLBAR">
+      <label class="toggle">
+        <input id="labelToggle" type="checkbox" checked />
+        <span>Toggle: Show/Hide Teaching Labels</span>
+      </label>
+
+      <button class="btn btn-secondary" type="button" id="themeButton">
+        BUTTON: Theme Toggle (Light/Dark)
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="site-main" data-part="MAIN">
+    <div class="container">
+      <section class="section" data-part="SECTION (About)">
+        <div class="teaching-label">SECTION: About</div>
+        <h1>Heading (H1): About This Template</h1>
+        <p>
+          Paragraph: This page exists to demonstrate multi-page navigation:
+          <strong>index.html</strong> ↔ <strong>about.html</strong>.
+        </p>
+
+        <article class="card" data-part="ARTICLE">
+          <div class="teaching-label">ARTICLE</div>
+          <h2>Heading (H2): What students can practice</h2>
+          <ol>
+            <li>Editing text content</li>
+            <li>Adding new sections/components</li>
+            <li>Changing styles in CSS</li>
+            <li>Adding small interactions in JavaScript</li>
+          </ol>
+        </article>
+
+        <a class="btn btn-primary" href="index.html">LINK: Back to Home</a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-part="FOOTER">
+    <div class="container footer-inner">
+      <div class="teaching-label">FOOTER</div>
+      <p>Paragraph: Footer content</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
