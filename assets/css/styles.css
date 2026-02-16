@@ -1,0 +1,359 @@
+/* =========================================================
+   STYLESHEET: assets/css/styles.css
+   Purpose: make a clean, readable teaching layout
+   ========================================================= */
+
+:root {
+  /* Simple “design tokens” (reusable values) */
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #555555;
+  --card: #f7f7f8;
+  --border: #d8d8dd;
+  --accent: #2f6feb;
+  --accent-2: #6f42c1;
+  --shadow: 0 8px 24px rgba(0,0,0,0.08);
+
+  --radius: 16px;
+  --space: 16px;
+  --space-lg: 24px;
+
+  --label-bg: #111111;
+  --label-text: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #0b0c10;
+  --text: #f2f2f2;
+  --muted: #b6b6b6;
+  --card: #141622;
+  --border: #2b2f3a;
+  --accent: #6ea8fe;
+  --accent-2: #c59cff;
+
+  --label-bg: #f2f2f2;
+  --label-text: #111111;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  width: min(1100px, calc(100% - 2 * var(--space-lg)));
+  margin: 0 auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 12px;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.skip-link:focus { left: 12px; }
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space);
+  padding: 14px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-mark { font-size: 20px; }
+.brand-title { font-weight: 800; }
+.brand-subtitle { color: var(--muted); font-size: 13px; }
+
+.site-nav { display: flex; align-items: center; gap: var(--space); }
+.nav-list {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-link {
+  text-decoration: none;
+  color: var(--text);
+  padding: 10px 10px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+}
+.nav-link:hover { border-color: var(--border); }
+.nav-link[aria-current="page"] {
+  border-color: var(--accent);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space);
+  padding: 0 0 14px 0;
+}
+
+.toggle {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.site-main {
+  padding: 26px 0 40px 0;
+}
+
+.hero {
+  padding: 22px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(47,111,235,0.08), rgba(47,111,235,0));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: var(--space-lg);
+}
+
+.section {
+  margin: 28px 0;
+  padding: 18px 0;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-lg);
+  margin-bottom: 10px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space);
+}
+
+.card {
+  position: relative;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.note {
+  position: relative;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px dashed var(--border);
+  background: rgba(111, 66, 193, 0.08);
+  margin: 14px 0;
+}
+
+.fake-media {
+  height: 120px;
+  border-radius: 14px;
+  border: 1px dashed var(--border);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.details {
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: rgba(0,0,0,0.03);
+}
+[data-theme="dark"] .details { background: rgba(255,255,255,0.04); }
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn:hover { transform: translateY(-1px); }
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.btn-secondary {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  color: #fff;
+}
+.btn-outline {
+  background: transparent;
+  border-color: var(--accent);
+  color: var(--text);
+}
+.btn-ghost {
+  background: transparent;
+}
+.btn-link {
+  background: transparent;
+  border-color: transparent;
+  color: var(--accent);
+}
+
+.form label {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+input, select, textarea {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+
+legend {
+  padding: 0 10px;
+  color: var(--muted);
+}
+
+.field-row {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.field-title {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-status {
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+.footer-links a { color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--text); }
+
+/* =========================================================
+   TEACHING LABELS
+   ========================================================= */
+.teaching-label {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 12px;
+  background: var(--label-bg);
+  color: var(--label-text);
+  padding: 6px 8px;
+  border-radius: 999px;
+  opacity: 0.92;
+}
+
+/* When labels are hidden, we add a class to <body> */
+.labels-hidden .teaching-label {
+  display: none;
+}
+
+/* Also outline the major parts when labels are ON */
+[data-part] {
+  outline: 2px dashed rgba(47,111,235,0.15);
+  outline-offset: 6px;
+}
+.labels-hidden [data-part] {
+  outline: none;
+}
+
+/* =========================================================
+   MODAL (DIALOG)
+   ========================================================= */
+.modal {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  width: min(680px, 92vw);
+}
+.modal::backdrop {
+  background: rgba(0,0,0,0.55);
+}
+
+/* =========================================================
+   RESPONSIVE: simple mobile layout
+   ========================================================= */
+@media (max-width: 900px) {
+  .layout-grid { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+
+  /* Mobile nav collapses */
+  .nav-list { display: none; flex-direction: column; align-items: flex-start; }
+  .nav-list.is-open { display: flex; }
+}
